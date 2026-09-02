@@ -36,7 +36,7 @@
       {
         question:
           "Sino ang Fav Mo?",
-        answer:[
+        answers:[
           "mylo",
           "you",
           "ikaw",
