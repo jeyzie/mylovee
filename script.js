@@ -60,7 +60,7 @@
       {
         question:
           "You Love Me? ❤️",
-        answer:
+        answers:
           "Yes"
       }
     ];
@@ -219,9 +219,7 @@
     function checkQuestion() {
 
       const answer =
-        normalizeAnswer(
-          questionInput.value
-        );
+        normalizeAnswer(questionInput.value);
 
       const correctAnswers =
         questions[currentQuestion].answers
@@ -233,14 +231,9 @@
         return;
       }
 
-      questionError.classList.remove(
-        "show"
-      );
+      questionError.classList.remove("show");
 
-      if (
-        currentQuestion <
-        questions.length - 1
-      ) {
+      if (currentQuestion < questions.length - 1) {
         goToNextQuestion();
       } else {
         unlockLoveLetter();
