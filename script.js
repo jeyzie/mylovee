@@ -62,7 +62,7 @@
           "You Love Me? ❤️",
         answers:
           ["Yes",
-            "i love you",
+            "yes i love you mylo",
             "of course",
             "yes i love you",
             "yes i love you so much",
