@@ -61,7 +61,13 @@
         question:
           "You Love Me? ❤️",
         answers:
-          ["Yes"]
+          ["Yes",
+            "i love you",
+            "of course",
+            "yes i love you",
+            "yes i love you so much",
+            "yes i love you so much mylo",
+          ]
       }
     ];
 
