@@ -61,7 +61,7 @@
         question:
           "You Love Me? ❤️",
         answers:
-          "Yes"
+          ["Yes"]
       }
     ];
 
