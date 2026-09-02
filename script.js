@@ -346,7 +346,7 @@
 
       {
         src:
-          "assets\audio\kaygandamo.mp3",
+          "assets/audio/kaygandamo.mp3",
 
         title:
           "Kay Ganda Mo",
@@ -357,7 +357,7 @@
 
       {
         src:
-          "assets\audio\mayakanauwi.mp3",
+          "assets/audio/mayakanauwi.mp3",
 
         title:
           "Maya Kana Uwi",
@@ -376,11 +376,11 @@
     ====================================================== */
 
     const albumImages = [
-      "assets\image\img1.jpg",
-      "assets\image\img2.jpg",
-      "assets\image\img3.jpg",
-      "assets\image\img4.jpg",
-      "assets\image\img5.jpg"
+      "assets/image/img1.jpg",
+      "assets/image/img2.jpg",
+      "assets/image/img3.jpg",
+      "assets/image/img4.jpg",
+      "assets/image/img5.jpg"
 
     ];
 
