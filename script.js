@@ -36,8 +36,12 @@
       {
         question:
           "Sino ang Fav Mo?",
-        answer:
-          "mylo"
+        answer:[
+          "mylo",
+          "you",
+          "ikaw",
+          "brow"
+        ]
       },
 
       {
