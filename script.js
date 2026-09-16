@@ -40,7 +40,8 @@
           "mylo",
           "you",
           "ikaw",
-          "brow"
+          "brow",
+          "u"
         ]
       },
 
@@ -53,7 +54,8 @@
             "dec 19 2024",
             "december 19 2024",
             "12/19/2024",
-            "12-19-2024"
+            "12-19-2024",
+            "dec 19"
         ]
       },
 
@@ -67,6 +69,8 @@
             "yes i love you",
             "yes i love you so much",
             "yes i love you so much mylo",
+            "y",
+            "/"
           ]
       }
     ];
@@ -206,21 +210,80 @@
       }, 210);
     }
 
-    function unlockLoveLetter() {
+function unlockLoveLetter() {
 
-      questionError.classList.remove(
-        "show"
-      );
+  const loadingScreen =
+    document.getElementById("loadingScreen");
 
-      questionScreen.classList.add(
-        "hide"
-      );
+  const loadingProgress =
+    document.getElementById("loadingProgress");
 
-      setTimeout(() => {
-        questionScreen.style.display =
-          "none";
-      }, 900);
-    }
+  const loadingPercent =
+    document.getElementById("loadingPercent");
+
+
+  questionError.classList.remove("show");
+
+
+  // Hide question screen
+  questionScreen.classList.add("hide");
+
+  // Hide letter scene while loading
+  scene.style.visibility = "hidden";
+
+
+  // Show loading screen
+  loadingScreen.classList.add("show");
+
+
+  let progress = 0;
+
+
+  const loadingInterval =
+    setInterval(() => {
+
+      progress += 1;
+
+      loadingProgress.style.width =
+        progress + "%";
+
+      loadingPercent.textContent =
+        progress + "%";
+
+
+      if (progress >= 100) {
+
+        clearInterval(
+          loadingInterval
+        );
+
+
+        // Keep loading visible briefly
+        setTimeout(() => {
+
+          // Show letter FIRST
+          scene.style.visibility = "visible";
+
+
+          // Then hide loading screen
+          loadingScreen.classList.remove(
+            "show"
+          );
+
+
+          setTimeout(() => {
+
+            questionScreen.style.display =
+              "none";
+
+          }, 300);
+
+        }, 400);
+
+      }
+
+    }, 30);
+}
 
     function checkQuestion() {
 
@@ -346,6 +409,25 @@
     ====================================================== */
 
     const songs = [
+        {
+        src:
+          "assets/audio/Libu Libong Buwan.mp3",
+        title:
+          "Libu Libong Buwan",
+        artist:
+          "and this song is our journey of love even we fight sometimes, but we still go back to each other."
+        },
+
+        { 
+        src:
+          "assets/audio/mayakanauwi.mp3",
+
+        title:
+          "Maya Kana Uwi",
+
+        artist:
+          "I still remember your OTJ moments—hatid, then uwi 😭"
+        },
 
       {
         src:
@@ -356,26 +438,6 @@
 
         artist:
           "This song reminds me of you during our dorm days.❤️"
-      },
-
-      {
-        src:
-          "assets/audio/mayakanauwi.mp3",
-
-        title:
-          "Maya Kana Uwi",
-
-        artist:
-          "I still remember your OTJ moments—hatid, then uwi 😭"
-      },
-
-      {
-        src:
-          "assets/audio/Libu Libong Buwan.mp3",
-        title:
-          "Libu Libong Buwan",
-        artist:
-          "and this song is our journey of love even we fight sometimes, but we still go back to each other."
       }
 
     ];
@@ -1008,11 +1070,11 @@
             "open"
           );
 
-
+          letter.scrollTop = 0;
           /*
             Pause music.
           */
-          music.pause();
+          music.play();
 
         }
 

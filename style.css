@@ -265,60 +265,66 @@
        LETTER
     ====================================================== */
 
-    .letter {
-      position: absolute;
+.letter {
+  position: absolute;
 
-      width: 320px;
+  width: 320px;
+  height: 500px;
+  min-height: 0;
 
-      min-height: 500px;
-      height: auto;
+  left: 30px;
+  top: 245px;
 
-      left: 30px;
+  padding: 32px 28px 36px;
 
-      /*
-        Start inside folder.
-      */
-      top: 245px;
+  background:
+    linear-gradient(
+      to bottom,
+      #fffdf7,
+      #fff8ed
+    );
 
-      padding:
-        32px 28px 36px;
+  border-radius:
+    10px 10px 4px 4px;
 
-      background:
-        linear-gradient(
-          to bottom,
-          #fffdf7,
-          #fff8ed
-        );
+  box-shadow:
+    0 15px 35px
+    rgba(90,60,50,0.16);
 
-      border-radius:
-        10px 10px 4px 4px;
+  z-index: 1;
 
-      box-shadow:
-        0 15px 35px
-        rgba(90,60,50,0.16);
+  transform: translateY(0);
 
-      z-index: 1;
+  transition:
+    transform 1.6s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
 
-      transform:
-        translateY(0);
+  overflow-y: auto;
+  overflow-x: hidden;
 
-      transition:
-        transform
-        1.6s
-        cubic-bezier(
-          0.22,
-          1,
-          0.36,
-          1
-        );
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 
-      overflow:
-        visible;
+  pointer-events: auto;
 
-      will-change:
-        transform;
-    }
+  will-change: transform;
 
+  overscroll-behavior: contain;
+  touch-action: pan-y;
+}
+
+.letter::-webkit-scrollbar {
+  display: none;
+}
+
+.scene.open .letter {
+  transform: translateY(-540px);
+}
 
     /* =====================================================
        LETTER TITLE
@@ -1980,7 +1986,11 @@
           0.36,
           1
         );
-    }
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+}
+    
 
     @keyframes questionCardIn {
       from {
@@ -2300,3 +2310,128 @@
       }
     }
 
+/* loading */
+
+.loading-screen {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(255,255,255,0.78),
+      transparent 38%
+    ),
+    linear-gradient(
+      135deg,
+      #f8e7df,
+      #f3d8d1,
+      #eadbd0
+    );
+
+  z-index: 2000;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.6s ease,
+    visibility 0.6s ease;
+}
+
+.loading-screen.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.loading-content {
+  width: 460px;
+  max-width: 90vw;
+
+  padding: 38px 40px 30px;
+
+  text-align: center;
+
+  background: rgba(255,248,242,0.96);
+
+  border: 1px solid rgba(255,255,255,0.75);
+
+  border-radius: 26px;
+
+  box-shadow:
+    0 28px 70px
+    rgba(150,100,100,0.18);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.tenor-gif-embed {
+  width: 130px !important;
+  margin: 0 auto 18px;
+}
+
+.loading-content h2 {
+  margin: 0 0 25px;
+
+  font-family:
+    "DM Serif Display",
+    serif;
+
+  font-size: 28px;
+
+  color: #b95d6d;
+}
+
+.loading-bar {
+  width: 100%;
+  height: 8px;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background:
+    rgba(150,105,105,0.15);
+}
+
+.loading-progress {
+  width: 0%;
+  height: 100%;
+
+  border-radius: 20px;
+
+  background: #d9687d;
+
+  transition:
+    width 0.08s linear;
+}
+
+.loading-percent {
+  display: block;
+
+  margin-top: 10px;
+
+  font-size: 15px;
+
+  color: #a8787d;
+}
+
+.scene.loading {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Prevent the question card from flashing/glitching */
+.question-card {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+}
