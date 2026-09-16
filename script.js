@@ -35,7 +35,7 @@
     const questions = [
       {
         question:
-          "Sino ang Fav Mo?",
+          "Sino Love Mo?",
         answers:[
           "mylo",
           "you",
@@ -47,7 +47,7 @@
 
       {
         question:
-            "kelan tayo naging tayo?",
+            "kelan naging tayo?",
         answers: [
             "december 19, 2024",
             "dec 19, 2024",
@@ -61,7 +61,7 @@
 
       {
         question:
-          "You Love Me? ❤️",
+          "Do you Love Me? ❤️",
         answers:
           ["Yes",
             "yes i love you mylo",
