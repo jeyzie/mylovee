@@ -279,6 +279,7 @@
 
   left: 30px;
   top: 245px;
+  bottom: 25%;
 
   padding: 32px 28px 36px;
 
@@ -1413,17 +1414,6 @@
         box-shadow
         0.25s ease;
     }
-
-
-    .music-player:hover {
-      transform:
-        translateY(-3px);
-
-      box-shadow:
-        0 23px 55px
-        rgba(170,110,110,0.25);
-    }
-
 
     /* =====================================================
        ALBUM IMAGE
@@ -2752,4 +2742,179 @@
     margin-top: 0;
     bottom: 8px;
   }
+}
+
+
+@media (max-width: 700px) {
+
+
+
+  .music-player {
+    display: block !important;
+    width: 125px;
+    height: 230px;
+    left: 50%;
+    top: 15px;
+    padding: 8px;
+    border-radius: 14px;
+    transform: translateX(-50%);
+    z-index: 15;
+  }
+
+
+  /* ===================================================
+     ALBUM IMAGE
+  =================================================== */
+
+  .album-cover {
+    display: block;
+
+    width: 110px;
+    height: 110px;
+
+    margin: 0 auto;
+
+    border-radius: 9px;
+  }
+
+
+  /* ===================================================
+     TRACK TITLE
+  =================================================== */
+
+  .track-info {
+    margin-top: 7px;
+
+    width: 100%;
+    min-width: 0;
+  }
+
+  .track-title {
+    font-size: 13px;
+    line-height: 1.2;
+  }
+
+
+  /* ===================================================
+     TRACK ARTIST
+  =================================================== */
+
+  .track-artist {
+    font-size: 9px;
+    line-height: 1.15;
+
+    margin-top: 2px;
+  }
+
+
+  /* ===================================================
+     PROGRESS BAR
+  =================================================== */
+
+  .progress-container {
+    margin-top: 7px;
+  }
+
+  .progress {
+    height: 3px;
+  }
+
+
+  /* ===================================================
+     TIME
+  =================================================== */
+
+  .time-row {
+    margin-top: 2px;
+    font-size: 8px;
+  }
+
+
+  /* ===================================================
+     PLAYER CONTROLS
+  =================================================== */
+
+  .player-controls {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 3px;
+    margin-bottom: 0;
+  }
+
+
+  .control-button {
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    background: transparent;
+
+    font-size: 12px;
+  }
+
+
+  /* ===================================================
+     PLAY BUTTON
+  =================================================== */
+
+  .play-button {
+    width: 34px;
+    height: 34px;
+
+    font-size: 14px;
+    border-radius: 50%;
+  }
+
+
+  /* ===================================================
+     VOLUME
+  =================================================== */
+
+  .volume-row {
+    display: flex;
+
+    align-items: center;
+
+    gap: 4px;
+
+    margin-top: 5px;
+  }
+
+  .volume-icon {
+    font-size: 10px;
+  }
+
+  .volume {
+    height: 3px;
+  }
+
+  .scene.open .letter-stage {
+    z-index: 90;
+  }
+
+  .scene.open .letter {
+    z-index: 100;
+  }
+
+  .scene.open .music-player {
+    z-index: 15;
+  }
+
+
+  .scene.open .tulip-group {
+    z-index: 120;
+  }
+
 }
