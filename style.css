@@ -1917,7 +1917,7 @@
       position: fixed;
       inset: 0;
 
-      display: flex;
+      display: none !important;
       align-items: center;
       justify-content: center;
 
@@ -2428,4 +2428,328 @@
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   transform: translateZ(0);
+}
+
+/* =====================================================
+   MOBILE RESPONSIVE
+   Add this at the VERY BOTTOM of style.css
+===================================================== */
+
+@media (max-width: 700px) {
+
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+  }
+
+  body {
+    overflow: hidden;
+  }
+
+  /* Make the main scene fit the phone screen */
+  .scene {
+    width: 100vw;
+    height: 100dvh;
+    min-height: 100dvh;
+
+    transform: none !important;
+    --scene-scale: 1;
+
+    overflow: hidden;
+  }
+
+  /* ==============================
+     FOLDER
+  ============================== */
+
+  .envelope {
+    width: min(330px, 84vw);
+    height: 210px;
+
+    left: 50%;
+    top: auto;
+    bottom: 82px;
+
+    transform: translateX(-50%);
+  }
+
+  .scene.open .envelope {
+    transform:
+      translateX(-50%)
+      translateY(30px);
+  }
+
+  /* ==============================
+     LETTER
+  ============================== */
+
+  .letter-stage {
+    left: 50%;
+    top: auto;
+    bottom: 82px;
+
+    width: min(330px, 84vw);
+    height: 210px;
+
+    transform: translateX(-50%);
+
+    clip-path:
+      inset(-90dvh 0 0 0);
+  }
+
+  .letter {
+    width: min(286px, 78vw);
+
+    height:
+      min(
+        500px,
+        calc(100dvh - 130px)
+      );
+
+    min-height: 0;
+
+    left: 50%;
+    top: 210px;
+
+    padding:
+      28px 22px 30px;
+
+    transform:
+      translateX(-50%)
+      translateY(0);
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+  }
+
+  .scene.open .letter {
+    transform:
+      translateX(-50%)
+      translateY(
+        calc(-100dvh + 160px)
+      );
+  }
+
+  .letter h1 {
+    font-size: 28px;
+  }
+
+  .letter p {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  /* ==============================
+     TULIPS
+  ============================== */
+
+  .tulip-group {
+    width: 210px;
+    height: 190px;
+
+    left: 50%;
+    top: auto;
+    bottom: 52px;
+
+    transform:
+      translateX(-50%)
+      scale(0.78);
+
+    transform-origin:
+      bottom center;
+  }
+
+  .scene.open .tulip-group {
+    left: auto;
+    right: 8px;
+    top: auto;
+    bottom: 58px;
+
+    transform:
+      scale(0.62);
+  }
+
+  /* ==============================
+     HINT
+  ============================== */
+
+  .hint {
+    bottom: 24px;
+    font-size: 17px;
+  }
+
+  /* ==============================
+     FOOTER
+  ============================== */
+
+  .footer {
+    left: 0;
+    bottom: 5px;
+
+    width: 100%;
+
+    text-align: center;
+    font-size: 12px;
+  }
+
+  /* ==============================
+     MUSIC PLAYER
+     Hide on small screens
+  ============================== */
+
+  .music-player {
+    display: none !important;
+  }
+
+  /* ==============================
+     QUESTION SCREEN
+  ============================== */
+
+  .question-screen {
+    min-height: 100dvh;
+    padding: 16px;
+  }
+
+  .question-card {
+    width: min(92vw, 420px);
+
+    max-height:
+      calc(100dvh - 32px);
+
+    overflow-y: auto;
+
+    -webkit-overflow-scrolling:
+      touch;
+
+    padding:
+      28px 20px 24px;
+  }
+
+  .question-card h2 {
+    font-size: 30px;
+  }
+
+  .question-subtitle {
+    font-size: 16px;
+  }
+
+  .question-text {
+    font-size: 19px;
+  }
+
+  .question-input,
+  .question-button {
+    height: 50px;
+  }
+
+  /* ==============================
+     LOADING SCREEN
+  ============================== */
+
+  .loading-screen {
+    min-height: 100dvh;
+    padding: 16px;
+  }
+
+  .loading-content {
+    width: min(90vw, 420px);
+
+    max-height:
+      calc(100dvh - 32px);
+
+    padding:
+      32px 24px 26px;
+  }
+
+  .tenor-gif-embed {
+    width:
+      min(120px, 34vw) !important;
+
+    margin:
+      0 auto 18px !important;
+  }
+
+  .loading-content h2 {
+    font-size: 25px;
+  }
+}
+
+/* =====================================================
+   EXTRA SMALL PHONES
+===================================================== */
+
+@media (max-width: 420px) {
+
+  .envelope {
+    width: 84vw;
+    height: 195px;
+    bottom: 78px;
+  }
+
+  .letter-stage {
+    width: 84vw;
+    height: 195px;
+    bottom: 78px;
+  }
+
+  .letter {
+    width: 76vw;
+    height:
+      min(
+        470px,
+        calc(100dvh - 120px)
+      );
+
+    top: 195px;
+
+    padding:
+      24px 19px 28px;
+  }
+
+  .scene.open .letter {
+    transform:
+      translateX(-50%)
+      translateY(
+        calc(-100dvh + 148px)
+      );
+  }
+
+  .letter h1 {
+    font-size: 25px;
+  }
+
+  .letter p {
+    font-size: 14px;
+  }
+
+  .tulip-group {
+    transform:
+      translateX(-65%)
+      translateY(-30px)
+      scale(0.70);
+  }
+
+  .scene.open .tulip-group {
+    right: -10px;
+    bottom: 60px;
+
+    transform:
+      scale(0.50);
+  }
+
+  .hint {
+    font-size: 16px;
+    bottom: 45px;
+  }
+
+  .footer {
+    font-size: 11px;
+    margin-top: 0;
+    bottom: 8px;
+  }
 }
